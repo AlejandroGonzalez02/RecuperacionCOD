@@ -2,13 +2,14 @@ package com.cod;
 
 public class Main {
   public static void main(String[] args){
-    if (metodo1("pepe@danielcastelao.org")){
+
+    if (email01("pepe@danielcastelao.org")){
       System.out.println("Listo");
     }
     else {
       System.out.println("Fallo");
     }
-    if(metodo2()){
+    if(email02()){
       System.out.println("Listo");
     }
     else{
@@ -16,15 +17,15 @@ public class Main {
     };
   }
 
-  public static boolean metodo1(String u){
-    Auxiliar obx1 = new Auxiliar(u);
-    System.out.println("Conectando a " + obx1.h + ", con el usuario " + u);
-    return obx1.con();
+  public static boolean email01(String email){
+    Comparar inicio01 = new Comparar(email);
+    System.out.println("Conectando a " + inicio01.ip + ", con el usuario " + email);
+    return inicio01.con();
   }
 
-  public static boolean metodo2(){
-    Auxiliar obx2 = new Auxiliar();
-    System.out.println("Conectando a " + obx2.h + ", con el usuario " + obx2.e);
-    return obx2.con();
+  public static boolean email02(){
+    Comparar inicio02 = new Comparar();
+    System.out.println("Conectando a " + inicio02.ip + ", con el usuario " + inicio02.email);
+    return inicio02.con();
   }
 }
