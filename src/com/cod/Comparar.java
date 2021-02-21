@@ -1,23 +1,34 @@
 package com.cod;
 
-public class Comparar{
-    String email = "";
+public class Comparar {
+    public static String email = "";
     String ip = "127.0.0.2";
 
-    Comparar(){
-        email ="anonymous@danielcastelao.org";
+    private static Comparar instance =null;
+
+
+    public static Comparar getInstance() {
+        if (instance == null){
+            instance = new Comparar();
+        }
+            email = "anonymous@danielcastelao.org";
+            return instance;
     }
 
-    Comparar(String param1){
-        this.email = param1;
+    public static Comparar getInstance(String ema) {
+            if(instance == null){
+                instance = new Comparar();
+            }
+
+            email = ema;
+            return instance;
     }
 
-    public boolean con(){
-        if(email !="anonymous@danielcastelao.org"){
-            return true;
-        }
-        else{
-            return false;
-        }
+    public boolean verificacion() {
+            if (email != "anonymous@danielcastelao.org") {
+                return true;
+            } else {
+                return false;
+            }
     }
 }
